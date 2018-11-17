@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/common.css" type="text/css">
+    <script src="/static/js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.user_li').on('mouseover', function () {
+                $(this).find('.address_ul').show();
+                {#$(this).hide()#}
+            });
+            $('.user_li').on('mouseleave', function () {
+                $(this).find('.address_ul').hide();
+                {#$(this).hide()#}
+            });
+        })
+    </script>
+</head>
+<body>
+<ul>
+    {% for user in users %}
+        <li class="user_li"><a href="#">{{ user.name }}</a>
+            <ul class="address_ul">
+                {% for addr in user.addr_list %}
+                    <li><a href="#">{{ addr.desc }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+
+</ul>
+
+</body>
+</html>

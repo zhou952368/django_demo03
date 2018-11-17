@@ -1,0 +1,22 @@
+.user_li{
+    width: 100px;
+    font-size: 20px;
+    /*width: 300px;*/
+    padding: 30px;
+    /*border-bottom: 1px solid black;*/
+    /*position: relative;*/
+    color: red;
+}
+.user_li:hover{
+    color: blue;
+}
+.address_ul{
+    width: 300px;
+    position: absolute;
+    display: none;
+    left: 110px;
+    top: 0;
+}
+.address_ul>li{
+    padding: 10px;
+}
